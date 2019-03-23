@@ -168,9 +168,10 @@ final class ParseUtil {
         for (Attribute attribute : parseAttributeList(line, tag)) {
             if (handlers.containsKey(attribute.name)) {
                 handlers.get(attribute.name).parse(attribute, builder, state);
-            } else {
-                throw ParseException.create(ParseExceptionType.INVALID_ATTRIBUTE_NAME, tag, line);
             }
+            //else {
+                //throw ParseException.create(ParseExceptionType.INVALID_ATTRIBUTE_NAME, tag, line);
+            //}
         }
     }
 
